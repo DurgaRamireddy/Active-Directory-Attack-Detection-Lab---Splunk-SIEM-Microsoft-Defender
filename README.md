@@ -439,26 +439,26 @@ Documenting what broke and how it was fixed is part of the learning - these aren
 
 ---
 
-## Files in This Repo
+## Screenshots
 
-```
-ad-attack-detection-lab/
-├── README.md
-├── scripts/
-│   ├── audit-policy-setup.ps1         # Enable advanced audit logging on DC
-│   ├── spn-registration.ps1           # Register SPNs on service accounts
-│   ├── splunk-inputs.conf             # Forwarder inputs configuration
-│   ├── splunk-outputs.conf            # Forwarder outputs configuration
-│   └── detection-queries.spl         # All SPL queries from this lab
-├── report/
-│   └── incident-report.md            # Full formal incident report
-└── screenshots/
-    ├── splunk-dashboard.png           # SOC detection dashboard
-    ├── kerberoasting-4769.png         # Event ID 4769 in Splunk
-    ├── asrep-4768.png                 # Event ID 4768 in Splunk
-    ├── passthehash-4624.png           # Event ID 4624 in Splunk
-    └── dcsync-4662.png               # Event ID 4662 in Splunk
-```
+### Splunk Detection Dashboard - Attacks 1 & 2 (Kerberoasting · AS-REP Roasting)
+![Splunk Dashboard Attacks 1 2](screenshots/Splunk%20Dash%20Board%20Attacks%201%2C%202.png)
+
+*Event ID 4769 with RC4 encryption (0x17) confirming Kerberoasting; Event ID 4768 with Pre_Authentication_Type=0 confirming AS-REP Roasting - both sourced from Kali IP 192.168.255.135*
+
+---
+
+### Splunk Detection Dashboard - Attack 3 (Pass-the-Hash)
+![Splunk Dashboard Attack 3](screenshots/Splunk%20Dashboard%20Attack%203.png)
+
+*Seven Logon Type 3 events from 192.168.255.135 as Administrator within seconds - programmatic authentication pattern indicative of Pass-the-Hash lateral movement*
+
+---
+
+### Splunk Detection Dashboard - Attacks 4 & 5 (DCSync · BloodHound)
+![Splunk Dashboard Attacks 4, 5](screenshots/Splunk%20Dashboard%20Attacks%204%2C%205.png)
+
+*24 Event ID 4662s in milliseconds with DS-Replication-Get-Changes-All GUID confirming DCSync; zero events for BloodHound LDAP enumeration - gap documented in Detection Gaps section*
 
 ---
 
