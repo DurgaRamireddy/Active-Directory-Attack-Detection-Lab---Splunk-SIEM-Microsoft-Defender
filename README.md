@@ -442,7 +442,7 @@ Documenting what broke and how it was fixed is part of the learning - these aren
 ## Screenshots
 
 ### Splunk Detection Dashboard - Attacks 1 & 2 (Kerberoasting · AS-REP Roasting)
-![Splunk Dashboard Attacks 1 2](screenshots/Splunk%20Dash%20Board%20Attacks%201%2C%202.png)
+![Splunk Dashboard Attacks 1 2](screenshots/Splunk%20Dash%20Board%20Attacks%201-2.png)
 
 *Event ID 4769 with RC4 encryption (0x17) confirming Kerberoasting; Event ID 4768 with Pre_Authentication_Type=0 confirming AS-REP Roasting - both sourced from Kali IP 192.168.255.135*
 
